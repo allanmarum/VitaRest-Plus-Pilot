@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VitaRest Plus Pilot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <section class="login-shell screen active" data-screen="login">
+        <div class="login-card">
+          <div class="eyebrow">Privacy-first resilience assessment mockup</div>
+          <h1>VitaRest Plus Pilot</h1>
+          <p class="lead">
+            A clickable product concept for assessing workforce resilience and morale of healthcare professionals using specialist-configured evaluation logic.
+          </p>
+
+          <div class="callout callout-soft">
+            <strong>Mockup only.</strong>
+            No backend, database, API, persistence, or real processing is present in this prototype.
+          </div>
+
+          <div class="login-form">
+            <label>
+              Operator workspace
+              <input type="text" value="EU Pilot Workspace" readonly />
+            </label>
+            <label>
+              Access mode
+              <input type="text" value="Privacy-first operator login" readonly />
+            </label>
+            <label>
+              Pilot note
+              <textarea readonly>Only anonymized professionals are used in this mockup. All examples are illustrative and GDPR-aligned for European Union deployment planning.</textarea>
+            </label>
+            <button class="primary-btn" data-go="dashboard">Enter mockup</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="app-shell screen" data-screen="workspace">
+        <aside class="sidebar">
+          <div>
+            <div class="brand-block">
+              <div class="brand-mark">VR+</div>
+              <div>
+                <h2>VitaRest Plus Pilot</h2>
+                <p>EU privacy-conscious product mockup</p>
+              </div>
+            </div>
+
+            <nav class="nav-list">
+              <button class="nav-item active" data-target="dashboard">Dashboard</button>
+              <button class="nav-item" data-target="professionals">Anonymous Professionals</button>
+              <button class="nav-item" data-target="professional-detail">Professional Detail / History</button>
+              <button class="nav-item" data-target="questionnaires">Questionnaires</button>
+              <button class="nav-item" data-target="questionnaire-detail">Questionnaire Detail</button>
+              <button class="nav-item" data-target="factors">Evaluation Factors</button>
+              <button class="nav-item" data-target="thresholds">Threshold Settings</button>
+              <button class="nav-item" data-target="collection">Data Collection</button>
+              <button class="nav-item" data-target="result">Evaluation Result</button>
+              <button class="nav-item" data-target="reports">Reports / Trends</button>
+              <button class="nav-item" data-target="settings">Admin / Settings</button>
+            </nav>
+          </div>
+
+          <div class="sidebar-footer">
+            <div class="privacy-chip">Anonymized only</div>
+            <button class="secondary-btn full-width" data-go="login">Return to login</button>
+          </div>
+        </aside>
+
+        <main class="main-panel">
+          <header class="topbar">
+            <div>
+              <div class="eyebrow">Configurable evaluation logic · mock workflow</div>
+              <h1 id="screen-title">Dashboard</h1>
+            </div>
+            <div class="topbar-actions">
+              <div class="status-pill">GDPR-aligned concept</div>
+              <div class="status-pill">No personal data displayed</div>
+            </div>
+          </header>
+
+          <section class="content-screen active" id="dashboard">
+            <div class="panel-grid two-up">
+              <article class="panel hero-panel">
+                <div>
+                  <div class="eyebrow">Aggregated operational overview</div>
+                  <h2>Dashboard</h2>
+                  <p>
+                    Monitor anonymized resilience and morale indicators across units, questionnaire cycles, and classification groups without exposing identifiable information.
+                  </p>
+                </div>
+                <div class="hero-actions">
+                  <button class="primary-btn" data-target="reports">Open trend reports</button>
+                  <button class="secondary-btn" data-target="collection">Simulate new data collection</button>
+                </div>
+              </article>
+              <article class="panel privacy-panel">
+                <h3>Privacy posture</h3>
+                <ul class="check-list">
+                  <li>Professionals are shown only as anonymous IDs.</li>
+                  <li>Sample outputs are aggregated and illustrative.</li>
+                  <li>Operator-managed logic can be edited without storing live data.</li>
+                </ul>
+              </article>
+            </div>
+
+            <div class="stats-grid">
+              <article class="stat-card">
+                <span>Active anonymous professionals</span>
+                <strong>128</strong>
+                <small>Across 4 care environments</small>
+              </article>
+              <article class="stat-card">
+                <span>Current pilot cycle</span>
+                <strong>Q2 Wellness Pulse</strong>
+                <small>Configurable specialist logic enabled</small>
+              </article>
+              <article class="stat-card">
+                <span>Aggregate resilience score</span>
+                <strong>72 / 100</strong>
+                <small>+4 versus prior illustrative cycle</small>
+              </article>
+              <article class="stat-card">
+                <span>Classification mix</span>
+                <strong>64% Green</strong>
+                <small>24% Yellow · 12% Red</small>
+              </article>
+            </div>
+
+            <div class="panel-grid two-up">
+              <article class="panel">
+                <div class="panel-heading">
+                  <h3>Illustrative trend snapshot</h3>
+                  <button class="link-btn" data-target="reports">View reports</button>
+                </div>
+                <div class="trend-bars">
+                  <div><span>Week 1</span><div class="bar"><i style="width: 62%"></i></div></div>
+                  <div><span>Week 2</span><div class="bar"><i style="width: 67%"></i></div></div>
+                  <div><span>Week 3</span><div class="bar"><i style="width: 71%"></i></div></div>
+                  <div><span>Week 4</span><div class="bar"><i style="width: 72%"></i></div></div>
+                </div>
+              </article>
+              <article class="panel">
+                <div class="panel-heading">
+                  <h3>Configurable logic summary</h3>
+                  <button class="link-btn" data-target="factors">Edit factors</button>
+                </div>
+                <div class="mini-table">
+                  <div><span>Factors</span><strong>8 active</strong></div>
+                  <div><span>Threshold scheme</span><strong>Green / Yellow / Red</strong></div>
+                  <div><span>Specialist owner</span><strong>Occupational wellbeing operator</strong></div>
+                  <div><span>Review cadence</span><strong>Monthly</strong></div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="content-screen" id="professionals">
+            <div class="panel-grid two-up">
+              <article class="panel">
+                <h2>Anonymous Professionals List</h2>
+                <p>Only anonymized IDs are visible. No names, emails, or other direct identifiers appear in the mockup.</p>
+              </article>
+              <article class="panel info-strip">
+                <strong>Segmentation:</strong> Unit, role cluster, shift pattern, and assessment cycle are shown only in anonymized form.
+              </article>
+            </div>
+
+            <div class="table-card">
+              <div class="table-header">
+                <span>Anonymous ID</span>
+                <span>Care Environment</span>
+                <span>Cycle</span>
+                <span>Latest Classification</span>
+                <span>Action</span>
+              </div>
+              <div class="table-row">
+                <span>HP-0142</span><span>Acute Ward A</span><span>Q2 Wellness Pulse</span><span><b class="green">Green</b></span>
+                <button class="link-btn" data-professional="HP-0142" data-target="professional-detail">Open detail</button>
+              </div>
+              <div class="table-row">
+                <span>HP-0278</span><span>Emergency Unit</span><span>Q2 Wellness Pulse</span><span><b class="yellow">Yellow</b></span>
+                <button class="link-btn" data-professional="HP-0278" data-target="professional-detail">Open detail</button>
+              </div>
+              <div class="table-row">
+                <span>HP-0316</span><span>Home Care Cluster</span><span>Q2 Wellness Pulse</span><span><b class="red">Red</b></span>
+                <button class="link-btn" data-professional="HP-0316" data-target="professional-detail">Open detail</button>
+              </div>
+              <div class="table-row">
+                <span>HP-0441</span><span>Rehabilitation Team</span><span>Q2 Wellness Pulse</span><span><b class="green">Green</b></span>
+                <button class="link-btn" data-professional="HP-0441" data-target="professional-detail">Open detail</button>
+              </div>
+            </div>
+          </section>
+
+          <section class="content-screen" id="professional-detail">
+            <div class="panel-grid two-up">
+              <article class="panel">
+                <div class="panel-heading">
+                  <h2>Professional Detail / History</h2>
+                  <div class="id-badge" id="selected-professional">HP-0142</div>
+                </div>
+                <p>
+                  History is shown as an anonymized sequence of questionnaire cycles, contextual inputs, and classification changes. This screen simulates longitudinal review without any direct identity data.
+                </p>
+              </article>
+              <article class="panel">
+                <h3>Current mock status</h3>
+                <div class="mini-table">
+                  <div><span>Latest score</span><strong>74 / 100</strong></div>
+                  <div><span>Classification</span><strong class="green">Green</strong></div>
+                  <div><span>Primary positive factor</span><strong>Team Support</strong></div>
+                  <div><span>Primary watch factor</span><strong>Shift Fatigue</strong></div>
+                </div>
+              </article>
+            </div>
+
+            <div class="panel-grid two-up">
+              <article class="panel">
+                <h3>Illustrative history</h3>
+                <div class="timeline">
+                  <div class="timeline-item"><strong>Cycle 1</strong><span>Score 68 · Yellow · elevated workload context</span></div>
+                  <div class="timeline-item"><strong>Cycle 2</strong><span>Score 71 · Yellow · improved rest quality responses</span></div>
+                  <div class="timeline-item"><strong>Cycle 3</strong><span>Score 74 · Green · stronger peer support indicators</span></div>
+                </div>
+              </article>
+              <article class="panel">
+                <h3>Next actions in mock flow</h3>
+                <div class="stacked-actions">
+                  <button class="secondary-btn" data-target="questionnaires">Review questionnaire used</button>
+                  <button class="secondary-btn" data-target="collection">Simulate new collection</button>
+                  <button class="primary-btn" data-target="result">Open latest evaluation result</button>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="content-screen" id="questionnaires">
+            <div class="panel-grid two-up">
+              <article class="panel">
+                <h2>Questionnaires List</h2>
+                <p>Questionnaire templates are configurable and organized by purpose, question structure, and use within the mock evaluation workflow.</p>
+              </article>
+              <article class="panel">
+                <h3>Template controls</h3>
+                <div class="mini-table">
+                  <div><span>Active templates</span><strong>3</strong></div>
+                  <div><span>Draft templates</span><strong>1</strong></div>
+                  <div><span>Answer formats</span><strong>Likert, Numeric, Context Tags</strong></div>
+                </div>
+              </article>
+            </div>
+
+            <div class="cards-grid three-up">
+              <article class="panel card-select">
+                <h3>Q2 Wellness Pulse</h3>
+                <p>Short pulse questionnaire for resilience, morale, rest quality, and support perception.</p>
+                <button class="primary-btn" data-questionnaire="Q2 Wellness Pulse" data-target="questionnaire-detail">Open template</button>
+              </article>
+              <article class="panel card-select">
+                <h3>Shift Context Check</h3>
+                <p>Supplementary context form for workload intensity, shift pattern, and care environment conditions.</p>
+                <button class="secondary-btn" data-questionnaire="Shift Context Check" data-target="questionnaire-detail">Open template</button>
+              </article>
+              <article class="panel card-select">
+                <h3>Recovery Follow-up</h3>
+                <p>Follow-up template focused on recovery indicators and protective factors after a yellow or red classification.</p>
+                <button class="secondary-btn" data-questionnaire="Recovery Follow-up" data-target="questionnaire-detail">Open template</button>
+              </article>
+            </div>
+          </section>
+
+          <section class="content-screen" id="questionnaire-detail">
+            <div class="panel-grid two-up">
+              <article class="panel">
+                <div class="panel-heading">
+                  <h2>Questionnaire Detail</h2>
+                  <div class="id-badge" id="selected-questionnaire">Q2 Wellness Pulse</div>
+                </div>
+                <p>This mock screen demonstrates configurable question structures, sections, response types, and factor mappings.</p>
+              </article>
+              <article class="panel">
+                <h3>Template metadata</h3>
+                <div class="mini-table">
+                  <div><span>Status</span><strong>Active</strong></div>
+                  <div><span>Mapped factors</span><strong>6</strong></div>
+                  <div><span>Review owner</span><strong>Specialist operator</strong></div>
+                  <div><span>Last illustrative revision</span><strong>March 2026</strong></div>
+                </div>
+              </article>
+            </div>
+
+            <div class="table-card questionnaire-table">
+              <div class="table-header">
+                <span>Section</span>
+                <span>Question structure</span>
+                <span>Response type</span>
+                <span>Mapped factor</span>
+              </div>
+              <div class="table-row"><span>Resilience</span><span>"I can recover after demanding shifts."</span><span>1-5 Likert</span><span>Recovery Capacity</span></div>
+              <div class="table-row"><span>Morale</span><span>"I feel positive about continuing in my current care role."</span><span>1-5 Likert</span><span>Morale Stability</span></div>
+              <div class="table-row"><span>Support</span><span>"I receive meaningful support from my team."</span><span>1-5 Likert</span><span>Team Support</span></div>
+              <div class="table-row"><span>Fatigue</span><span>"Recent shifts have left me physically drained."</span><span>1-5 Reverse</span><span>Shift Fatigue</span></div>
+            </div>
+          </section>
+
+          <section class="content-screen" id="factors">
+            <div class="panel-grid two-up">
+              <article class="panel">
+                <h2>Evaluation Factors</h2>
+                <p>Operators can edit factor definitions, adjust weights, and declare whether a factor contributes positively or negatively to the illustrative score.</p>
+              </article>
+              <article class="panel callout-panel">
+                <h3>Operator configurability</h3>
+                <p>Specialist-defined logic can be revised before each pilot cycle, including weights, interpretation notes, and threshold sensitivity.</p>
+              </article>
+            </div>
+
+            <div class="table-card">
+              <div class="table-header">
+                <span>Factor</span>
+                <span>Weight</span>
+                <span>Impact</span>
+                <span>Threshold sensitivity</span>
+                <span>Edit</span>
+              </div>
+              <div class="table-row"><span>Recovery Capacity</span><span>22%</span><span class="green">Positive</span><span>Medium</span><button class="link-btn">Edit</button></div>
+              <div class="table-row"><span>Morale Stability</span><span>18%</span><span class="green">Positive</span><span>High</span><button class="link-btn">Edit</button></div>
+              <div class="table-row"><span>Team Support</span><span>16%</span><span class="green">Positive</span><span>Medium</span><button class="link-btn">Edit</button></div>
+              <div class="table-row"><span>Shift Fatigue</span><span>20%</span><span class="red">Negative</span><span>High</span><button class="link-btn">Edit</button></div>
+              <div class="table-row"><span>Workload Strain</span><span>14%</span><span class="red">Negative</span><span>Medium</span><button class="link-btn">Edit</button></div>
+              <div class="table-row"><span>Rest Quality</span><span>10%</span><span class="green">Positive</span><span>Low</span><button class="link-btn">Edit</button></div>
+            </div>
+          </section>
+
+          <section class="content-screen" id="thresholds">
+            <div class="panel-grid two-up">
+              <article class="panel">
+                <h2>Threshold Settings</h2>
+                <p>Classification ranges are configurable by the operator and shown here as a typical green, yellow, and red scheme.</p>
+              </article>
+              <article class="panel">
+                <h3>Current illustrative model</h3>
+                <div class="threshold-stack">
+                  <div class="threshold green-bg"><strong>Green</strong><span>70 - 100 · stable / resilient outlook</span></div>
+                  <div class="threshold yellow-bg"><strong>Yellow</strong><span>45 - 69 · monitor / support advised</span></div>
+                  <div class="threshold red-bg"><strong>Red</strong><span>0 - 44 · immediate review priority</span></div>
+                </div>
+              </article>
+            </div>
+
+            <div class="panel-grid two-up">
+              <article class="panel">
+                <h3>Threshold modifiers</h3>
+                <div class="mini-table">
+                  <div><span>Negative factor override</span><strong>Enabled for Shift Fatigue</strong></div>
+                  <div><span>Yellow escalation rule</span><strong>2 consecutive cycles</strong></div>
+                  <div><span>Contextual intensity uplift</span><strong>+10% sensitivity</strong></div>
+                </div>
+              </article>
+              <article class="panel">
+                <h3>Mock actions</h3>
+                <div class="stacked-actions">
+                  <button class="secondary-btn" data-target="factors">Refine factor weights</button>
+                  <button class="primary-btn" data-target="result">Preview outcome with current thresholds</button>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="content-screen" id="collection">
+            <div class="panel-grid two-up">
+              <article class="panel">
+                <h2>Data Collection</h2>
+                <p>Simulate questionnaire responses and contextual inputs for an anonymized professional. Inputs are illustrative and not saved anywhere.</p>
+              </article>
+              <article class="panel info-strip">
+                <strong>Subject:</strong> <span id="collection-professional">HP-0142</span> · Example collection for mock workflow only
+              </article>
+            </div>
+
+            <div class="panel-grid two-up">
+              <article class="panel">
+                <h3>Questionnaire responses</h3>
+                <div class="form-grid">
+                  <label>Recovery after demanding shifts<select><option>4 - Usually</option><option>3 - Sometimes</option><option>2 - Rarely</option></select></label>
+                  <label>Positive about current care role<select><option>4 - Usually</option><option>3 - Sometimes</option><option>2 - Rarely</option></select></label>
+                  <label>Meaningful team support<select><option>5 - Strongly agree</option><option>4 - Agree</option><option>3 - Neutral</option></select></label>
+                  <label>Physical drain after recent shifts<select><option>2 - Low</option><option>3 - Moderate</option><option>4 - Elevated</option></select></label>
+                </div>
+              </article>
+              <article class="panel">
+                <h3>Contextual inputs</h3>
+                <div class="form-grid">
+                  <label>Shift intensity<select><option>Elevated</option><option>Typical</option><option>Reduced</option></select></label>
+                  <label>Unit pressure<select><option>High</option><option>Moderate</option><option>Low</option></select></label>
+                  <label>Recent recovery days<select><option>2 days</option><option>1 day</option><option>0 days</option></select></label>
+                  <label>Observed support action<select><option>Peer debrief available</option><option>Manager follow-up planned</option><option>No action yet</option></select></label>
+                </div>
+              </article>
+            </div>
+
+            <div class="action-row">
+              <button class="secondary-btn" data-target="questionnaire-detail">Review questionnaire structure</button>
+              <button class="primary-btn" data-target="result">Simulate evaluation result</button>
+            </div>
+          </section>
+
+          <section class="content-screen" id="result">
+            <div class="panel-grid two-up">
+              <article class="panel result-summary">
+                <h2>Evaluation Result</h2>
+                <div class="result-score">74</div>
+                <p>Final illustrative score for <span id="result-professional">HP-0142</span></p>
+                <div class="classification-pill green-bg">Classification: Green</div>
+              </article>
+              <article class="panel">
+                <h3>Outcome interpretation</h3>
+                <p>This mock result represents how configurable factor weights and threshold settings could combine into a final classification and contribution breakdown.</p>
+                <div class="mini-table">
+                  <div><span>Threshold scheme</span><strong>Green / Yellow / Red</strong></div>
+                  <div><span>Negative override triggered</span><strong>No</strong></div>
+                  <div><span>Suggested flow</span><strong>Continue monitoring</strong></div>
+                </div>
+              </article>
+            </div>
+
+            <article class="panel">
+              <div class="panel-heading">
+                <h3>Contribution breakdown</h3>
+                <button class="link-btn" data-target="thresholds">View thresholds</button>
+              </div>
+              <div class="contribution-list">
+                <div><span>Recovery Capacity</span><div class="bar positive"><i style="width: 82%"></i></div><strong>+18</strong></div>
+                <div><span>Morale Stability</span><div class="bar positive"><i style="width: 76%"></i></div><strong>+14</strong></div>
+                <div><span>Team Support</span><div class="bar positive"><i style="width: 84%"></i></div><strong>+13</strong></div>
+                <div><span>Shift Fatigue</span><div class="bar negative"><i style="width: 40%"></i></div><strong>-8</strong></div>
+                <div><span>Workload Strain</span><div class="bar negative"><i style="width: 28%"></i></div><strong>-5</strong></div>
+              </div>
+            </article>
+          </section>
+
+          <section class="content-screen" id="reports">
+            <div class="panel-grid two-up">
+              <article class="panel">
+                <h2>Reports / Trends</h2>
+                <p>Simulated reports present historical evolution over time for aggregate and cohort-level resilience indicators.</p>
+              </article>
+              <article class="panel">
+                <h3>Report filters</h3>
+                <div class="mini-table">
+                  <div><span>Period</span><strong>Last 12 weeks</strong></div>
+                  <div><span>Aggregation level</span><strong>Unit cluster</strong></div>
+                  <div><span>View mode</span><strong>Trend + classification mix</strong></div>
+                </div>
+              </article>
+            </div>
+
+            <div class="panel-grid two-up">
+              <article class="panel">
+                <h3>Aggregate resilience trend</h3>
+                <div class="trend-bars detailed">
+                  <div><span>W1</span><div class="bar"><i style="width: 58%"></i></div><em>58</em></div>
+                  <div><span>W3</span><div class="bar"><i style="width: 62%"></i></div><em>62</em></div>
+                  <div><span>W5</span><div class="bar"><i style="width: 65%"></i></div><em>65</em></div>
+                  <div><span>W7</span><div class="bar"><i style="width: 69%"></i></div><em>69</em></div>
+                  <div><span>W9</span><div class="bar"><i style="width: 71%"></i></div><em>71</em></div>
+                  <div><span>W12</span><div class="bar"><i style="width: 72%"></i></div><em>72</em></div>
+                </div>
+              </article>
+              <article class="panel">
+                <h3>Classification evolution</h3>
+                <div class="classification-mix">
+                  <div><span>Green</span><div class="mix-bar green-bg" style="width: 64%"></div><em>64%</em></div>
+                  <div><span>Yellow</span><div class="mix-bar yellow-bg" style="width: 24%"></div><em>24%</em></div>
+                  <div><span>Red</span><div class="mix-bar red-bg" style="width: 12%"></div><em>12%</em></div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="content-screen" id="settings">
+            <div class="panel-grid two-up">
+              <article class="panel">
+                <h2>Admin / Settings</h2>
+                <p>This screen simulates operator configuration, governance, and privacy-related controls appropriate for a GDPR-aligned EU deployment concept.</p>
+              </article>
+              <article class="panel callout-panel">
+                <h3>Privacy controls</h3>
+                <ul class="check-list">
+                  <li>Anonymized identifier policy enabled</li>
+                  <li>PII fields excluded from mock workflow</li>
+                  <li>Operator review of threshold changes required</li>
+                </ul>
+              </article>
+            </div>
+
+            <div class="cards-grid three-up">
+              <article class="panel">
+                <h3>Configuration governance</h3>
+                <div class="mini-table">
+                  <div><span>Change approval</span><strong>Dual operator review</strong></div>
+                  <div><span>Logic version label</span><strong>EU-Pilot-v0.4</strong></div>
+                  <div><span>Audit note</span><strong>Illustrative only</strong></div>
+                </div>
+              </article>
+              <article class="panel">
+                <h3>Privacy & compliance</h3>
+                <div class="mini-table">
+                  <div><span>Data minimization</span><strong>Enabled</strong></div>
+                  <div><span>Retention simulation</span><strong>No persistence</strong></div>
+                  <div><span>Export capability</span><strong>Disabled in mockup</strong></div>
+                </div>
+              </article>
+              <article class="panel">
+                <h3>Operator actions</h3>
+                <div class="stacked-actions">
+                  <button class="secondary-btn" data-target="factors">Adjust factors</button>
+                  <button class="secondary-btn" data-target="thresholds">Review thresholds</button>
+                  <button class="primary-btn" data-target="dashboard">Return to dashboard</button>
+                </div>
+              </article>
+            </div>
+          </section>
+        </main>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

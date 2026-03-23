@@ -2,16 +2,18 @@ const shellScreens = document.querySelectorAll('.screen');
 const contentScreens = document.querySelectorAll('.content-screen');
 const navItems = document.querySelectorAll('.nav-item');
 const screenTitle = document.getElementById('screen-title');
+const screenTitleMobile = document.getElementById('screen-title-mobile');
 const selectedProfessional = document.getElementById('selected-professional');
 const collectionProfessional = document.getElementById('collection-professional');
 const resultProfessional = document.getElementById('result-professional');
 const selectedQuestionnaire = document.getElementById('selected-questionnaire');
+const mobileNavigation = document.getElementById('mobileNavigation');
 
 const titleMap = {
   dashboard: 'Dashboard',
-  professionals: 'Anonymous Professionals List',
-  'professional-detail': 'Professional Detail / History',
-  questionnaires: 'Questionnaires List',
+  professionals: 'Anonymous Professionals',
+  'professional-detail': 'Professional Detail',
+  questionnaires: 'Questionnaires',
   'questionnaire-detail': 'Questionnaire Detail',
   factors: 'Evaluation Factors',
   thresholds: 'Threshold Settings',
@@ -21,47 +23,78 @@ const titleMap = {
   settings: 'Admin / Settings'
 };
 
+function syncTitles(target) {
+  const nextTitle = titleMap[target] || 'VitaRest Plus Pilot';
+
+  if (screenTitle) {
+    screenTitle.textContent = nextTitle;
+  }
+
+  if (screenTitleMobile) {
+    screenTitleMobile.textContent = nextTitle;
+  }
+}
+
 function showShell(screen) {
-  shellScreens.forEach((item) => item.classList.toggle('active', item.dataset.screen === screen));
+  shellScreens.forEach((item) => {
+    item.classList.toggle('active', item.dataset.screen === screen);
+  });
 }
 
 function showContent(target) {
-  contentScreens.forEach((screen) => screen.classList.toggle('active', screen.id === target));
-  navItems.forEach((item) => item.classList.toggle('active', item.dataset.target === target));
-  screenTitle.textContent = titleMap[target] || 'VitaRest Plus Pilot';
+  contentScreens.forEach((screen) => {
+    screen.classList.toggle('active', screen.id === target);
+  });
+
+  navItems.forEach((item) => {
+    item.classList.toggle('active', item.dataset.target === target);
+  });
+
+  syncTitles(target);
 }
 
 function updateProfessional(id) {
   if (!id) return;
-  selectedProfessional.textContent = id;
-  collectionProfessional.textContent = id;
-  resultProfessional.textContent = id;
+
+  if (selectedProfessional) selectedProfessional.textContent = id;
+  if (collectionProfessional) collectionProfessional.textContent = id;
+  if (resultProfessional) resultProfessional.textContent = id;
 }
 
 function updateQuestionnaire(name) {
-  if (!name) return;
+  if (!name || !selectedQuestionnaire) return;
   selectedQuestionnaire.textContent = name;
+}
+
+function closeMobileNavigation() {
+  if (!mobileNavigation || typeof bootstrap === 'undefined') return;
+
+  const offcanvas = bootstrap.Offcanvas.getInstance(mobileNavigation);
+  if (offcanvas) {
+    offcanvas.hide();
+  }
 }
 
 function routeTo(target) {
   if (target === 'login') {
     showShell('login');
+    closeMobileNavigation();
     return;
   }
 
-  if (target === 'dashboard') {
-    showShell('workspace');
-  }
-
   showShell('workspace');
-  showContent(target);
+  showContent(target || 'dashboard');
+  closeMobileNavigation();
 }
 
 document.addEventListener('click', (event) => {
-  const goTarget = event.target.dataset.go;
-  const contentTarget = event.target.dataset.target;
-  const professionalId = event.target.dataset.professional;
-  const questionnaireName = event.target.dataset.questionnaire;
+  const trigger = event.target.closest('[data-go], [data-target], [data-professional], [data-questionnaire]');
+  if (!trigger) return;
+
+  const goTarget = trigger.dataset.go;
+  const contentTarget = trigger.dataset.target;
+  const professionalId = trigger.dataset.professional;
+  const questionnaireName = trigger.dataset.questionnaire;
 
   if (professionalId) {
     updateProfessional(professionalId);
@@ -73,6 +106,7 @@ document.addEventListener('click', (event) => {
 
   if (goTarget) {
     routeTo(goTarget);
+    return;
   }
 
   if (contentTarget) {

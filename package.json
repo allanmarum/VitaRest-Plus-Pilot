@@ -1,0 +1,15 @@
+{
+  "name": "vitarest-plus-pilot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Railway-ready native Node.js deployment for the VitaRest Plus Pilot prototype.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node --check server.js && node --check app.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
